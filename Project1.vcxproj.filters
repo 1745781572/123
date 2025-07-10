@@ -21,5 +21,8 @@
     <ClCompile Include="2.cpp">
       <Filter>UI</Filter>
     </ClCompile>
+    <ClCompile Include="3.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
