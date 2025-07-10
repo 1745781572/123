@@ -1,0 +1,23 @@
+name: ai-reviews
+
+on:
+      pull_request:
+          types: [opened, synchronize]
+
+jobs:
+  review:
+      name: Review PR
+        runs-on: ubuntu-latest
+
+      steps:
+          - name: Checkout code
+              uses: http://localhost:3000/123/checkout.git@main
+                with:
+                    fetch-depth: 0
+
+      - name: Review code
+        uses: http://localhost:3000/123/AiReviewPR.git@main
+          with:
+            model: 'deepseek-coder-v2:16b'
+            host: ${{ vars.OLLAMA_HOST }}
+            REVIEW_PULL_REQUEST: true
